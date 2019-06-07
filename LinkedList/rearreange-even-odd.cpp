@@ -2,8 +2,8 @@
 #include <vector>
 using namespace std;
 
-  class Node
-  {
+class Node
+{
   public:
       int data;
       Node *next;
@@ -13,7 +13,7 @@ using namespace std;
           this->data = data;
           this->next = next;
       }
-  };
+};
 
   Node *head = NULL;
   Node *tail = NULL;
@@ -47,53 +47,49 @@ using namespace std;
   //----------------------------------------------------
        //This is a functional problem. Only this function has to be written.
        //You should return the head of node after sorting.
-  Node* sort(Node* head)
+  Node* rearrange(Node* head)
   {
-      if(head==NULL || head->next==NULL)
+      if(head==NULL || head->next == NULL)
       {
           return head;
       }
-      Node * xh = NULL, *xt = NULL;
-      Node * yh = NULL , *yt = NULL;
+      Node * oh = NULL , *ot = NULL  , *eh = NULL , *et = NULL;
+      int c = 1;
       Node * t = head;
       while(t!=NULL)
       {
-          if(t->data < 0)
+          Node * curr = t;
+          t = t->next;
+          curr->next = NULL;
+
+          if(c%2!=0)
           {
-              if(xh == NULL)
+              if(oh == NULL)
               {
-                  xh = t;
-                  xt = t;
-                  t = t->next;
-                  xt->next = NULL;
+                  oh = curr , ot = curr;
               }
               else
               {
-                   Node * temp = t;
-                   t=t->next;
-                   temp->next = xh;
-                   xh = temp;
+                    ot->next = curr;
+                    ot = ot->next;
               }
           }
-          else{
-            if(yh == NULL)
+          else
+          {
+             if(eh == NULL)
               {
-                  yh = t;
-                  yt = t;
-                  t = t->next;
-                  yt->next = NULL;
+                  eh = curr , et = curr;
               }
-              else{
-                yt->next = t;
-                t = t->next;
-                yt = yt->next;
-                yt->next = NULL;
+              else
+              {
+                    et->next = curr;
+                    et = et->next;
               }
           }
+          c++;
       }
-      if(xh==NULL)  return yh;
-      xt->next = yh;
-      return xh;
+    ot->next = eh;
+    return oh;
   }
   //----------------------------------------------------
 
@@ -110,7 +106,7 @@ using namespace std;
           insert(a);
       }
       // cal to the function
-      Node* sortedHead = sort(head);
+      Node* sortedHead = rearrange(head);
 
       //output handled
       display(sortedHead);

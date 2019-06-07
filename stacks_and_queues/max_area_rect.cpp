@@ -1,31 +1,61 @@
 #include<bits/stdc++.h>
 using namespace std;
-int maxarea(vector<int>v , int n)
+int max_rect(int *arr , int n)
 {
+    int res[n],lb[n],rb[n];
     stack<int> s;
-    for(int i=n-1;i>=0;i--)
+    s.push(0);
+    int marea = -1;
+    for(int i=1;i<n;i++)
     {
-        int el_index = i;
-        if(i==0)
+        while(!s.empty() && arr[i]<=arr[s.top()])
         {
-
-            lb = -1;
+            int x = s.top();
+            rb[s.top()] = i;
+            s.pop();
+            if(s.empty())
+            {
+                lb[x] = -1;
+            }
+            else{
+                lb[x] = s.top();
+            }
+            marea = max(marea , (rb[x] - lb[x] - 1) * arr[x]);
         }
-        while(!s.empty() )
-            (arr[j] < )
-
+        /*if(s.empty())
+        {
+            lb[i] = -1;
+        }
+        else{
+            lb[i] = s.top();
+        }*/
+        s.push(i);
     }
+    while(!s.empty())
+    {
+        int x = s.top();
+        rb[x] = n;
+        s.pop();
+        if(s.empty())
+            {
+                lb[x] = -1;
+            }
+            else{
+                lb[x] = s.top();
+            }
+            marea = max(marea , (rb[x] - lb[x] - 1) * arr[x]);
+    }
+
+    return marea;
 }
 int main()
 {
-
     int n;
     cin>>n;
-    vector<int> v;
+    int arr[10000];
     for(int i=0;i<n;i++)
     {
-      int num;
-      cin>>num;
-      v.push_back(num);
+        cin>>arr[i];
     }
+    cout<<max_rect(arr , n);
 }

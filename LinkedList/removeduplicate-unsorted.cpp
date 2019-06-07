@@ -2,8 +2,8 @@
 #include <vector>
 using namespace std;
 
-  class Node
-  {
+class Node
+{
   public:
       int data;
       Node *next;
@@ -13,7 +13,7 @@ using namespace std;
           this->data = data;
           this->next = next;
       }
-  };
+};
 
   Node *head = NULL;
   Node *tail = NULL;
@@ -47,53 +47,12 @@ using namespace std;
   //----------------------------------------------------
        //This is a functional problem. Only this function has to be written.
        //You should return the head of node after sorting.
-  Node* sort(Node* head)
+  Node* removedupl(Node* head)
   {
       if(head==NULL || head->next==NULL)
       {
           return head;
       }
-      Node * xh = NULL, *xt = NULL;
-      Node * yh = NULL , *yt = NULL;
-      Node * t = head;
-      while(t!=NULL)
-      {
-          if(t->data < 0)
-          {
-              if(xh == NULL)
-              {
-                  xh = t;
-                  xt = t;
-                  t = t->next;
-                  xt->next = NULL;
-              }
-              else
-              {
-                   Node * temp = t;
-                   t=t->next;
-                   temp->next = xh;
-                   xh = temp;
-              }
-          }
-          else{
-            if(yh == NULL)
-              {
-                  yh = t;
-                  yt = t;
-                  t = t->next;
-                  yt->next = NULL;
-              }
-              else{
-                yt->next = t;
-                t = t->next;
-                yt = yt->next;
-                yt->next = NULL;
-              }
-          }
-      }
-      if(xh==NULL)  return yh;
-      xt->next = yh;
-      return xh;
   }
   //----------------------------------------------------
 
