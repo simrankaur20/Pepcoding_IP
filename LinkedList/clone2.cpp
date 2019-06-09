@@ -93,7 +93,7 @@ Node * oddevensplit(Node * h)
                     break;
                 }
             }
-            t->arb = o->arb->next;
+           o->arb!=NULL ? t->arb = o->arb->next;
             return oddevensplit(m);
            // return m;
          }
