@@ -60,8 +60,8 @@ int main()
                     cin>>num;
       	  	  	   fq.push(num);
       	  	   }
-      	  	   else if(q==2) cout<<fq.pop()<<" ";
-      	  	   else if(q==3) cout<<fq.getmin()<<" ";
+      	  	   else if(q==2) cout<<fq.pop()<<endl;
+      	  	   else if(q==3) cout<<fq.getmin()<<endl;
       	  	   i++;
       	   }
       	   //cout<<fq.mf<<endl;
