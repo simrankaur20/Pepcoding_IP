@@ -34,7 +34,9 @@ int reversal(string s)
             cc++;
         st.pop();
     }
-    return ceil(oc) + ceil(cc/2);
+if((oc+cc) %2 !=0)
+    return -1;
+    return ceil(oc/2.0) + ceil(cc/2.0);
 }
 int main()
 {
