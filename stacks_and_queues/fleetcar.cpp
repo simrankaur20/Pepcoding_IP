@@ -15,7 +15,7 @@ int fleet(pair<int,int> *cars ,int n , int t)
         }
     }
 
-    for(i = m;m!=-1 && i>=0;i--)
+    for(i = m; i>=0;i--)
     {
          int ctime = (t - cars[i].second)/cars[i].first;
 
