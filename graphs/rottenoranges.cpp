@@ -68,7 +68,6 @@ int oranges(int chessboard[][100],int n,int m)
              chessboard[t.x][t.y - 1] = 2;
         }
     }
-cout<<endl;
     for(int i=0;i<n;i++)
     {
         for(int j=0;j<m ;j++)
@@ -77,9 +76,7 @@ cout<<endl;
             {
                 time = -1;
             }
-            cout<<chessboard[i][j]<<" ";
         }
-        cout<<endl;
     }
     return time;
 }
@@ -93,17 +90,7 @@ void input(int n,int m)
             cin>>chessboard[i][j];
         }
     }
-    for(int i=0;i<n;i++)
-    {
-        for(int j=0;j<m ;j++)
-        {
-            if(chessboard[i][j]==1)
-            {
-                cout<<chessboard[i][j]<<" ";
-            }
-        }
-        cout<<endl;
-    }
+
     cout<<oranges(chessboard,n,m);
 }
 
