@@ -20,7 +20,7 @@ int jungle(int * ans , int n)
      if(no_of_grp==0)
         no_of_grp = 1;
 
-     cout<< it->first<<" "<<it->second<<" " << grpsize<<" "<<no_of_grp<<endl;
+//     cout<< it->first<<" "<<it->second<<" " << grpsize<<" "<<no_of_grp<<endl;
      res += (grpsize * no_of_grp);
  }
  return res;
