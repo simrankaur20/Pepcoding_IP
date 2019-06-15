@@ -25,9 +25,7 @@ bool validate(int * pushed, int * popped, int n)
     }
     if(st.empty())
         return true;
-    cout<<st.top();
-    if(p2==n-1 && (!st.empty() && st.top() == popped[p2]) )
-        return true;
+
     return false;
 }
 int main()
