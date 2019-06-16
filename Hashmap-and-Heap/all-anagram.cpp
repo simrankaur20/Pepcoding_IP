@@ -30,7 +30,7 @@ vector<int> findAnagrams(string& s,string& p){
     {
         v.push_back(start);
     }
-   cout<<"mc befor loop"<<mc<<endl;
+ //  cout<<"mc befor loop"<<mc<<endl;
     while(e < s.length())
     {
 
@@ -44,14 +44,14 @@ vector<int> findAnagrams(string& s,string& p){
         }
         tmap[s[e]]++;
         e++;
-        cout<< start << " "<< s[start] << " "<<p_fmap.count(s[start])<<endl;
+    //    cout<< start << " "<< s[start] << " "<<p_fmap.count(s[start])<<endl;
         if((p_fmap.count(s[start]) == 1) && tmap[s[start]]<= p_fmap[s[start]])
         {
             mc--;
         }
         tmap[s[start]]-- ;
         start++;
-        cout<<mc<<endl;
+      //  cout<<mc<<endl;
         if(mc == p.length())
         {
             v.push_back(start);
