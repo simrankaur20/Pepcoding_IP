@@ -64,15 +64,18 @@ bool canReorder(int A[], int n) {
 }
 int main(int argc, char** argv) {
 
-       int size;
-       cin>>size;
-       int a[size];
-       for(int i=0;i<size;i++){
-           cin>>a[i];
-       }
-       if(canReorder(a, size) == 0){
-           cout<<"false"<<endl;
-       }else{
-           cout<<"true"<<endl;
-       }
+//       int size;
+//       cin>>size;
+//       int a[size];
+//       for(int i=0;i<size;i++){
+//           cin>>a[i];
+//       }
+//       if(canReorder(a, size) == 0){
+//           cout<<"false"<<endl;
+//       }else{
+//           cout<<"true"<<endl;
+//       }
+
+  unordered_map<int ,int> m;
+  cout<<m[1];
    }

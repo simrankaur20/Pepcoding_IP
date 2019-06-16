@@ -52,5 +52,7 @@ int calcsubstr(string s)
 }
 int main()
 {
-   cout<< calcsubstr("102100211");
+   string s;
+   cin>>s;
+   cout<< calcsubstr(s);
 }
