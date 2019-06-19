@@ -3,10 +3,7 @@
  #include <string>
  #include <unordered_map>
  #include <unordered_set>
-
  using namespace std;
-
- // ----------------------------------------------
  bool areKAnagrams(string &str1, string &str2, int k)
  {
      unordered_map<char,int> m;
