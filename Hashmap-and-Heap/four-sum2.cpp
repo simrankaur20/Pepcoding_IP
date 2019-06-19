@@ -12,9 +12,9 @@ using namespace std;
  {
         vector<vector<int>> ans;
         sort(nums.begin() , nums.end());
-        for(int i =0 ; i<nums.size() ; i++)
+        for(int i =0 ; i<nums.size()-3 ; i++)
         {
-            for(int j =i+1; j<nums.size() ;j++)
+            for(int j =i+1; j<nums.size()-2 ;j++)
             {
                     int l = j+1 , r = nums.size()-1;
                     while(l<r)
