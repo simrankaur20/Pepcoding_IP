@@ -11,7 +11,7 @@ string smallestWindow(string s, string t) {
       int start =0 , e = 0;
       int mc = 0;
       int bs = 0, be = s.length()-1;
-      cout<<e << " "<<s.length();
+      //cout<<e << " "<<s.length();
       while( (e<s.length()))
       {
         while(mc < t.length())
@@ -30,7 +30,7 @@ string smallestWindow(string s, string t) {
             }
             e++;
         }
-        cout<< mc << " " << e <<" " << start<<endl;
+       // cout<< mc << " " << e <<" " << start<<endl;
         if(e == s.length() && mc!=t.length())break;
         if((be - bs) > (e- start))
         {
@@ -58,7 +58,7 @@ string smallestWindow(string s, string t) {
             }
             start++;
         }
-        cout<<endl<<endl<<bs<<bs<<endl;
+     //   cout<<endl<<endl<<bs<<bs<<endl;
         if((be - bs) > ( e - start))
         {
             bs = start - 1 ;
